@@ -10,7 +10,7 @@ import MapKit
 
 
 class FlickrClient {
-    static let apiKey = ""
+    static let apiKey = "0dccd2bb7906b155c6945aac98d58d12"
     
     static let searchRadiusSize = "15"
     static let prePage = "60"
@@ -68,7 +68,36 @@ class FlickrClient {
         task.resume()
     }
     
-    func getPhotos(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping ([Photo], Error?) -> Void) {
-        
+    static func getPhotos(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping ([Data], Error?) -> Void) {
+        let url = Endpoints.searchPhotos(perPage: "30", latitude: latitude, longitude: longitude).url
+        print(url)
+        taskForGetRequest(url: url, responseType: FlickrPhotoResponseWrap.self) { (response, error) in
+            if let response = response {
+                var photosData: [Data] = []
+                let photosList = response.photos.photo
+                for photo in photosList {
+                    getImageData(url: photo.url) { (data, error) in
+                        if let data = data {
+                            photosData.append(data)
+                        }
+                    }
+                }
+                completion(photosData, nil)
+            } else {
+                completion([], error)
+            }
+        }
+    }
+    
+    static func getImageData(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+        print(url)
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
+            completion(data, nil)
+        }
+        task.resume()
     }
 }
