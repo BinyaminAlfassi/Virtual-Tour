@@ -68,7 +68,7 @@ class FlickrClient {
         task.resume()
     }
     
-    static func getPhotos(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping ([Data], Error?) -> Void) {
+    class func getPhotos(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping ([Data], Error?) -> Void) {
         let url = Endpoints.searchPhotos(perPage: "30", latitude: latitude, longitude: longitude).url
         print(url)
         taskForGetRequest(url: url, responseType: FlickrPhotoResponseWrap.self) { (response, error) in
@@ -89,7 +89,7 @@ class FlickrClient {
         }
     }
     
-    static func getImageData(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+    class func getImageData(url: URL, completion: @escaping (Data?, Error?) -> Void) {
         print(url)
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
