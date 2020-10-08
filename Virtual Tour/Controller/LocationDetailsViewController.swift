@@ -23,6 +23,9 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
         configureCollectionView()
         configureMap()
     }
@@ -73,10 +76,12 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
         let newPhoto = Photo(context: DataController.shared.backgroundContext)
         newPhoto.photo = photoData
         newPhoto.pin = self.pin
-        do {
-            try DataController.shared.backgroundContext.save()
-        } catch {
-            print("")
+        DispatchQueue.main.async {
+            do {
+                try DataController.shared.backgroundContext.save()
+            } catch {
+                print("")
+            }
         }
     }
     
