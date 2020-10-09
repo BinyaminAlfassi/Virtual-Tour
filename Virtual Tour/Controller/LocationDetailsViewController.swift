@@ -61,37 +61,35 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
     }
     
     func getAllPhotosFromFlickr() {
-        FlickrClient.getPhotos(latitude: pin.latitude, longitude: pin.longitude) { (photosDataList, error) in
+        FlickrClient.getPhotos(latitude: pin.latitude, longitude: pin.longitude) { (photoData, error) in
             if let error = error {
                 print(error)
             } else {
-                for photoData in photosDataList {
-                    self.addPhotoToDB(photoData: photoData)
-                }
+                self.addPhotoToDB(photoData: photoData!)
             }
         }
     }
     
     func addPhotoToDB(photoData: Data) {
-        let newPhoto = Photo(context: DataController.shared.backgroundContext)
+        let newPhoto = Photo(context: DataController.shared.viewContext)
         newPhoto.photo = photoData
         newPhoto.pin = self.pin
         DispatchQueue.main.async {
             do {
-                try DataController.shared.backgroundContext.save()
+                try DataController.shared.viewContext.save()
             } catch {
-                print("")
+                print(error)
             }
         }
     }
     
     func fetchPhotos() {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "photo", ascending: false)
+        //let sortDescriptor = NSSortDescriptor(key: "photo", ascending: false)
         let predicate = NSPredicate(format: "pin == %@", pin)
         fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataController.shared.backgroundContext, sectionNameKeyPath: nil, cacheName: "photosOf\(String(pin.latitude))\(String(pin.longitude))")
+        fetchRequest.sortDescriptors = []//[sortDescriptor]
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataController.shared.viewContext, sectionNameKeyPath: nil, cacheName: "photosOf\(String(pin.latitude))\(String(pin.longitude))")
         fetchedResultsController.delegate = self
         do {
             try fetchedResultsController.performFetch()

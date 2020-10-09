@@ -94,8 +94,8 @@
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "taskForGetRequest(url:responseType:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,32 +110,17 @@
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "getPhotos(latitude:longitude:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5C3F39F8-0388-4F53-8EE4-26A8A44A5214 - f41e0429ebedb181"
+                  uuid = "5C3F39F8-0388-4F53-8EE4-26A8A44A5214 - 46096ff52802d62b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Array&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Virtual Tour"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "465">
-               </Location>
-               <Location
-                  uuid = "5C3F39F8-0388-4F53-8EE4-26A8A44A5214 - 58987cbe6cd4e889"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Virtual_Tour.FlickrPhotoResponseWrap&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Array&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Virtual Tour"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
@@ -143,6 +128,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
                   endingLineNumber = "75"
+                  offsetFromSymbolStart = "465">
+               </Location>
+               <Location
+                  uuid = "5C3F39F8-0388-4F53-8EE4-26A8A44A5214 - 655e13e6bafed8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Virtual_Tour.FlickrPhotoResponseWrap&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Virtual Tour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
                   offsetFromSymbolStart = "234">
                </Location>
             </Locations>
@@ -152,19 +152,19 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "ECD58F0F-B8E5-40D0-8659-634DED7DE098"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "getImageData(url:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "ECD58F0F-B8E5-40D0-8659-634DED7DE098 - ae73187199c7874f"
+                  uuid = "ECD58F0F-B8E5-40D0-8659-634DED7DE098 - ae73187199c78720"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -174,12 +174,12 @@
                   urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
                   offsetFromSymbolStart = "381">
                </Location>
                <Location
-                  uuid = "ECD58F0F-B8E5-40D0-8659-634DED7DE098 - c96048012c8524d6"
+                  uuid = "ECD58F0F-B8E5-40D0-8659-634DED7DE098 - c96048012c852b7b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -189,8 +189,8 @@
                   urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
                   offsetFromSymbolStart = "216">
                </Location>
             </Locations>
@@ -206,8 +206,8 @@
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "getPhotos(latitude:longitude:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -216,14 +216,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F2232102-FCA0-44A1-B854-773853FB3FB1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "getPhotos(latitude:longitude:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "fetchPhotos()"
             landmarkType = "7">
          </BreakpointContent>
@@ -248,14 +248,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D037238B-CDB2-4B71-A001-0C269579D82D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "fetchPhotos()"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "fetchPhotos()"
             landmarkType = "7">
          </BreakpointContent>
@@ -280,14 +280,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "69561260-7CBA-44A3-9D14-74F8FA82CBFF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "addPhotoToDB(photoData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -296,7 +296,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "99C8FDC0-3860-46DB-8436-84F394B26204"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
@@ -312,14 +312,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1BDC7F8D-DFB1-4AC0-ABD3-3504630EA3E1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "getImageData(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -328,46 +328,46 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DEE4EE6B-2556-4CA0-AA78-BED8F16178EB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "getPhotos(latitude:longitude:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "DEE4EE6B-2556-4CA0-AA78-BED8F16178EB - 58987cbe6cd4e80d"
+                  uuid = "DEE4EE6B-2556-4CA0-AA78-BED8F16178EB - 655e13e6bafed01"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Virtual_Tour.FlickrPhotoResponseWrap&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Array&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Virtual_Tour.FlickrPhotoResponseWrap&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Virtual Tour"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "1580">
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1394">
                </Location>
                <Location
-                  uuid = "DEE4EE6B-2556-4CA0-AA78-BED8F16178EB - 67a03ce8963923b7"
+                  uuid = "DEE4EE6B-2556-4CA0-AA78-BED8F16178EB - be800cf3cc0c94a2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Virtual_Tour.FlickrPhotoResponseWrap&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Array&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Virtual_Tour.FlickrPhotoResponseWrap&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Virtual_Tour.FlickrClient.getPhotos(latitude: Swift.Double, longitude: Swift.Double, completion: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Virtual Tour"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "178">
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "229">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -376,14 +376,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E3683E0D-EF4B-48F9-A02A-7F24D40B5FC7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "getImageData(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -392,15 +392,175 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D47A9F3A-67D4-4B1E-B31B-305CB8FAED74"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "getImageData(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DC7E253-6E4B-4F00-A2FE-B2D2212B405D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "fetchPhotos()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E0E2DD3-0362-4974-8386-ADF9D976E57F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getAllPhotosFromFlickr()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E0E2DD3-0362-4974-8386-ADF9D976E57F - 50715e462294d4e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Virtual_Tour.LocationDetailsViewController.getAllPhotosFromFlickr() -&gt; ()"
+                  moduleName = "Virtual Tour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Controller/LocationDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "1E0E2DD3-0362-4974-8386-ADF9D976E57F - d78bbd30f6b35ad1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Virtual_Tour.LocationDetailsViewController.getAllPhotosFromFlickr() -&gt; ()"
+                  moduleName = "Virtual Tour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Controller/LocationDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "154">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1024069B-1870-4D35-A0CF-858B88F967BE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "taskForGetRequest(url:responseType:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "173AD193-E20A-40DC-8CA5-AE0F96C2BF77"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtual Tour/Model/Network/FlickrClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "taskForGetRequest(url:responseType:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "173AD193-E20A-40DC-8CA5-AE0F96C2BF77 - e704f503401e967f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Virtual_Tour.FlickrClient.taskForGetRequest&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, responseType: A.Type, completion: (Swift.Optional&lt;A&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Virtual Tour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "199">
+               </Location>
+               <Location
+                  uuid = "173AD193-E20A-40DC-8CA5-AE0F96C2BF77 - 9fd024862a26f73e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Virtual_Tour.FlickrClient.taskForGetRequest&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, responseType: A.Type, completion: (Swift.Optional&lt;A&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Virtual Tour"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/binyaminalfassi/Documents/IOS%20Developer%20Nanodegree/GCD/Virtual%20Tour/Virtual%20Tour/Model/Network/FlickrClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "490">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4EB06FD0-7D74-4D06-A653-60A3CB50D0D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "addPhotoToDB(photoData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E018A537-D386-4AAA-82F1-1DA48D7473B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Virtual Tour/Controller/LocationDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "getAllPhotosFromFlickr()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

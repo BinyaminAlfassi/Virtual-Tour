@@ -82,11 +82,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognize
     }
     
     func populateMapWithAnnotations() {
-        DataController.shared.backgroundContext.perform {
+        DataController.shared.viewContext.perform {
             let fetchRequest: NSFetchRequest<Pin> = Pin.fetchRequest()
             let sortDescriptor = NSSortDescriptor(key: "latitude", ascending: false)
             fetchRequest.sortDescriptors = [sortDescriptor]
-            self.fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataController.shared.backgroundContext, sectionNameKeyPath: nil, cacheName: "pins")
+            self.fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataController.shared.viewContext, sectionNameKeyPath: nil, cacheName: "pins")
             self.fetchResultsController.delegate = self
             do {
                 try self.fetchResultsController.performFetch()
@@ -186,13 +186,13 @@ extension MapViewController {
     }
     
     func addPinToDB(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        DataController.shared.backgroundContext.perform {
-            let newPin: Pin = Pin(context: DataController.shared.backgroundContext)
+        DataController.shared.viewContext.perform {
+            let newPin: Pin = Pin(context: DataController.shared.viewContext)
             newPin.latitude = latitude
             newPin.longitude = longitude
             newPin.photo = nil
             do {
-                try DataController.shared.backgroundContext.save()
+                try DataController.shared.viewContext.save()
                 self.pins.append(newPin)
             } catch {
                 // TBD: show message to user
