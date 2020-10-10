@@ -150,6 +150,7 @@
                         <outlet property="buttomToolbar" destination="y8Z-YD-kPn" id="Tap-iv-L6B"/>
                         <outlet property="collectionView" destination="97V-p0-oLW" id="1cV-WG-sFd"/>
                         <outlet property="mapView" destination="8y3-ns-BaH" id="RbQ-go-d3c"/>
+                        <outlet property="newCollectionButton" destination="YZJ-wg-G3S" id="fBk-62-BEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aG-tG-ruo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -24,6 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognize
     
     var pins: [Pin] = []
     //MARK: Methods
+    //MARK: ViewController Methods
     // This function will be called after view loaded
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +80,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognize
             // Not determined yet --> requesting authorization from user
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
-            // TBD show alert
+            showAlertMessage(message: "Location Services are not authorized by user")
             break
         default:
             break
@@ -170,7 +171,6 @@ extension MapViewController {
     }
     // This function autosave map region to UserDefaults until stopped by indication of autosaveRegionFlag
     func autosaveMapRegion(interval: TimeInterval = 30) {
-        print("Autosaving Region...")
         guard interval > 0 else {
             print("Cannot set negative interval")
             return
@@ -179,6 +179,7 @@ extension MapViewController {
             print("Stoping Autosaving Region")
             return
         }
+        print("Autosaving Region...")
         self.saveMapLocation()
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
             self.autosaveMapRegion()
@@ -221,12 +222,12 @@ extension MapViewController {
             newPin.longitude = longitude
             newPin.photo = nil
             do {
-                // Savomg the pin to DB
+                // Saving the pin to DB
                 try DataController.shared.viewContext.save()
                 // Storing it in pin list of view
                 self.pins.append(newPin)
             } catch {
-                // TBD: show message to user
+                self.showAlertMessage(message: "Pin could not be added to database")
             }
         }
     }
@@ -292,7 +293,7 @@ extension MapViewController: NSFetchedResultsControllerDelegate {
         if let pin = pin {
             self.performSegue(withIdentifier: locationDetailsVCSegue, sender: pin)
         } else {
-            // TBD: show message that pin didn't found
+            showAlertMessage(message: "Pin not found")
         }
     }
     // Prepare method to set locationDetailViewController with relevant Pin from DB
@@ -300,5 +301,14 @@ extension MapViewController: NSFetchedResultsControllerDelegate {
         if let vc = segue.destination as? LocationDetailsViewController {
             vc.pin = (sender as! Pin)
         }
+    }
+}
+
+extension MapViewController {
+    // Show alert messages to the screen
+    func showAlertMessage(message: String) {
+        let vc = UIAlertController(title: "Note", message: message, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(vc, animated: true, completion: nil)
     }
 }
