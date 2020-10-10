@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		38A386F1252BCBE500E7B4F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A386F0252BCBE500E7B4F1 /* AppDelegate.swift */; };
 		38A386F8252BCBE500E7B4F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A386F6252BCBE500E7B4F1 /* Main.storyboard */; };
-		38A386FB252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38A386F9252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodeld */; };
 		38A386FD252BCBE700E7B4F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A386FC252BCBE700E7B4F1 /* Assets.xcassets */; };
 		38A38700252BCBE700E7B4F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A386FE252BCBE700E7B4F1 /* LaunchScreen.storyboard */; };
 		38A3870B252BCBE700E7B4F1 /* Virtual_TourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3870A252BCBE700E7B4F1 /* Virtual_TourTests.swift */; };
@@ -47,7 +46,6 @@
 		38A386ED252BCBE500E7B4F1 /* Virtual Tour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual Tour.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A386F0252BCBE500E7B4F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38A386F7252BCBE500E7B4F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		38A386FA252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Virtual_Tour.xcdatamodel; sourceTree = "<group>"; };
 		38A386FC252BCBE700E7B4F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38A386FF252BCBE700E7B4F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38A38701252BCBE700E7B4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				38A386FC252BCBE700E7B4F1 /* Assets.xcassets */,
 				38A386FE252BCBE700E7B4F1 /* LaunchScreen.storyboard */,
 				38A38701252BCBE700E7B4F1 /* Info.plist */,
-				38A386F9252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodeld */,
 			);
 			path = "Virtual Tour";
 			sourceTree = "<group>";
@@ -331,7 +328,6 @@
 				38A38751252DAD7D00E7B4F1 /* PhotosListFlickrResponse.swift in Sources */,
 				38A3872E252CA1D000E7B4F1 /* DataController.swift in Sources */,
 				38A3873C252CA82100E7B4F1 /* VirtualTourDB.xcdatamodeld in Sources */,
-				38A386FB252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodeld in Sources */,
 				38A38756252DAE5400E7B4F1 /* FlickrPhotoDetails.swift in Sources */,
 				38A386F1252BCBE500E7B4F1 /* AppDelegate.swift in Sources */,
 				38A38736252CA7F900E7B4F1 /* MapViewController.swift in Sources */,
@@ -671,16 +667,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		38A386F9252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				38A386FA252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodel */,
-			);
-			currentVersion = 38A386FA252BCBE500E7B4F1 /* Virtual_Tour.xcdatamodel */;
-			path = Virtual_Tour.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		38A3873A252CA82100E7B4F1 /* VirtualTourDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
