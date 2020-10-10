@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//MARK: Custom Collection View Cell contating a UIImageView
 class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!

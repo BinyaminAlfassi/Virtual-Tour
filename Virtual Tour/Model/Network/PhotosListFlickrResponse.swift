@@ -6,12 +6,13 @@
 //
 
 import Foundation
-
+//MARK: Implementation of response for photos search request
 struct PhotosListFlickrResponse: Codable {
     let page: Int
     let pages: Int
     let perpage: Int
     let total: String
+    // List of details of photos struct
     let photo: [FlickrPhotoDetails]
     
     enum CodingKeys: String, CodingKey {

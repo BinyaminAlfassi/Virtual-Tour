@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//MARK: Implementing a general response of Flickr for photo search request indicating an error
 struct FlickrGeneralResponse: Codable {
     let stat: String
     let code: Int

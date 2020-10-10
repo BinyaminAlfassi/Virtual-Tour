@@ -12,13 +12,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
     var mapViewController: MapViewController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Loading Data Controller
         DataController.shared.load()
+        // Getting Root ViewCntroller to store, for the use of saving maps region
         let navigationController = window?.rootViewController as! UINavigationController
         mapViewController = (navigationController.topViewController as! MapViewController)
         
@@ -26,10 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
+        // Saving Map Region to UserDefults before app will terminate
         mapViewController!.saveMapLocation()
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        // Saving Map Region to UserDefults when app enters background state
         mapViewController!.saveMapLocation()
     }
 

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//MARK: Implementation of details of a photo in Flickr in order to construct the URL of a photo data
 struct FlickrPhotoDetails: Codable {
     let id: String
     let owner: String
@@ -29,6 +29,6 @@ struct FlickrPhotoDetails: Codable {
         case isfriend
         case isfamily
     }
-    
+    // Constructing the URL of photo's data
     var url: URL {return URL(string: "https://live.staticflickr.com/\(server)/\(id)_\(secret)_q.jpg")!}
 }

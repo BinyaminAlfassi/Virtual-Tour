@@ -6,8 +6,10 @@
 //
 
 import Foundation
-
+//MARK: Implementation of response to search photos
 struct FlickrPhotoResponseWrap: Codable {
+    // List of Photo details structs
     let photos: PhotosListFlickrResponse
+    // Status
     let stat: String
 }
