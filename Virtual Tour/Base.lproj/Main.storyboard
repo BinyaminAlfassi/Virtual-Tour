@@ -111,7 +111,11 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="02v-xU-jhP"/>
-                                    <barButtonItem title="New Collection" id="YZJ-wg-G3S"/>
+                                    <barButtonItem title="New Collection" id="YZJ-wg-G3S">
+                                        <connections>
+                                            <action selector="newCollectionTapped:" destination="O6q-PT-poe" id="EQG-FC-11u"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EMP-sg-7aq"/>
                                 </items>
                             </toolbar>

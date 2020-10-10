@@ -28,6 +28,7 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
         
         configureCollectionView()
         configureMap()
+        setGestureRecognition()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +39,13 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         fetchedResultsController = nil
+    }
+    
+    @IBAction func newCollectionTapped(_ sender: Any) {
+        deleteAllImages()
+        collectionView.reloadData()
+        getAllPhotosFromFlickr()
+        collectionView.reloadData()
     }
     
     fileprivate func configureMap() {
@@ -63,7 +71,7 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
     func getAllPhotosFromFlickr() {
         FlickrClient.getPhotos(latitude: pin.latitude, longitude: pin.longitude) { (photoData, error) in
             if let error = error {
-                print(error)
+                self.showAlertMessage(message: "\(error)")
             } else {
                 self.addPhotoToDB(photoData: photoData!)
             }
@@ -78,7 +86,7 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
             do {
                 try DataController.shared.viewContext.save()
             } catch {
-                print(error)
+                fatalError("\(error)")
             }
         }
     }
@@ -97,9 +105,26 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
                 getAllPhotosFromFlickr()
             }
         } catch {
-            
+            showAlertMessage(message: "\(error)")
         }
         collectionView.reloadData()
+    }
+    
+    func deleteAllImages() {
+        if let photosToDelete = self.fetchedResultsController.fetchedObjects {
+            for photo in photosToDelete.reversed() {
+                deletePhoto(photo: photo)
+            }
+        }
+    }
+    
+    func deletePhoto(photo: Photo) {
+        DataController.shared.viewContext.delete(photo)
+        do {
+            try DataController.shared.viewContext.save()
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -123,8 +148,29 @@ extension LocationDetailsViewController: UICollectionViewDataSource, UICollectio
         
         return cell
     }
+}
+
+extension LocationDetailsViewController: UIGestureRecognizerDelegate {
     
+    func setGestureRecognition() {
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longTap(gestureRecognizer:)))
+        gestureRecognizer.delegate = self
+        collectionView.addGestureRecognizer(gestureRecognizer)
+    }
     
+    @objc func longTap(gestureRecognizer: UIGestureRecognizer) {
+        switch gestureRecognizer.state {
+        case UIGestureRecognizer.State.ended:
+            let path = gestureRecognizer.location(in: self.collectionView)
+            if let indexPath = self.collectionView.indexPathForItem(at: path) {
+                let photo = fetchedResultsController.object(at: indexPath)
+                deletePhoto(photo: photo)
+                collectionView.reloadData()
+            }
+        default:
+            break
+        }
+    }
 }
 
 extension LocationDetailsViewController: NSFetchedResultsControllerDelegate {
@@ -140,5 +186,27 @@ extension LocationDetailsViewController: NSFetchedResultsControllerDelegate {
         default:
             break
         }
+    }
+    
+    @objc func longTap(gestureRecognized: UIGestureRecognizer) {
+        switch gestureRecognized.state {
+        case UIGestureRecognizer.State.ended:
+            let path = gestureRecognized.location(in: self.collectionView)
+            if let indexPath = self.collectionView.indexPathForItem(at: path) {
+                let photo = fetchedResultsController.object(at: indexPath)
+                deletePhoto(photo: photo)
+                collectionView.reloadData()
+            }
+        default:
+            break
+        }
+    }
+}
+
+extension LocationDetailsViewController {
+    func showAlertMessage(message: String) {
+        let vc = UIAlertController(title: "Note", message: message, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(vc, animated: true, completion: nil)
     }
 }
