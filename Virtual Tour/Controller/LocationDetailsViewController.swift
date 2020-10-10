@@ -18,6 +18,15 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var buttomToolbar: UIToolbar!
     
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    let itemsPerRow: CGFloat = 4
+    let collectionSectionInsets = UIEdgeInsets(top: 5.0,
+    left: 5.0,
+    bottom: 50.0,
+    right: 5.0)
+    
     let photoCollectionViewCellId = "PhotoCollectionViewCell"
     
     override func viewDidLoad() {
@@ -33,6 +42,10 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         fetchPhotos()
     }
     
@@ -42,10 +55,12 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func newCollectionTapped(_ sender: Any) {
+        activityIndicatorStart(true)
         deleteAllImages()
         collectionView.reloadData()
         getAllPhotosFromFlickr()
         collectionView.reloadData()
+        activityIndicatorStart(false)
     }
     
     fileprivate func configureMap() {
@@ -75,7 +90,7 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
             } else {
                 self.addPhotoToDB(photoData: photoData!)
             }
-        }
+        } ifNoPhotosDo: {self.showMessageNoImages()}
     }
     
     func addPhotoToDB(photoData: Data) {
@@ -86,12 +101,15 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
             do {
                 try DataController.shared.viewContext.save()
             } catch {
-                fatalError("\(error)")
+                print("\(error)")
             }
         }
     }
     
     func fetchPhotos() {
+        
+        activityIndicatorStart(true)
+        
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         //let sortDescriptor = NSSortDescriptor(key: "photo", ascending: false)
         let predicate = NSPredicate(format: "pin == %@", pin)
@@ -107,6 +125,9 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
         } catch {
             showAlertMessage(message: "\(error)")
         }
+        
+        activityIndicatorStart(false)
+        
         collectionView.reloadData()
     }
     
@@ -131,10 +152,12 @@ class LocationDetailsViewController: UIViewController, MKMapViewDelegate {
 extension LocationDetailsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if fetchedResultsController == nil {return 1}
         return fetchedResultsController.sections?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if fetchedResultsController == nil {return 0}
         return fetchedResultsController.sections?[0].numberOfObjects ?? 0
     }
     
@@ -165,7 +188,7 @@ extension LocationDetailsViewController: UIGestureRecognizerDelegate {
             if let indexPath = self.collectionView.indexPathForItem(at: path) {
                 let photo = fetchedResultsController.object(at: indexPath)
                 deletePhoto(photo: photo)
-                collectionView.reloadData()
+                collectionView.deleteItems(at: [indexPath])
             }
         default:
             break
@@ -204,9 +227,55 @@ extension LocationDetailsViewController: NSFetchedResultsControllerDelegate {
 }
 
 extension LocationDetailsViewController {
+    
+    func showMessageNoImages() {
+        showAlertMessage(message: "No images found for this location.")
+    }
+    
     func showAlertMessage(message: String) {
         let vc = UIAlertController(title: "Note", message: message, preferredStyle: .alert)
         vc.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(vc, animated: true, completion: nil)
     }
+    
+    func activityIndicatorStart(_ start: Bool) {
+        activityIndicator.isHidden = !start
+        if start{
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+}
+
+extension LocationDetailsViewController : UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+    let paddingSpace = collectionSectionInsets.left * itemsPerRow
+    let availableWidth = UIScreen.main.bounds.width - paddingSpace
+    let widthPerItem = availableWidth / itemsPerRow
+    
+    let frameSize = CGSize(width: widthPerItem, height: widthPerItem)
+    
+    return frameSize
+  }
+  
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      insetForSectionAt section: Int) -> UIEdgeInsets {
+    return collectionSectionInsets
+  }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+    }
+  
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
 }

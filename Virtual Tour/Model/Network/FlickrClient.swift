@@ -69,13 +69,19 @@ class FlickrClient {
         task.resume()
     }
     
-    class func getPhotos(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (Data?, Error?) -> Void) {
+    class func getPhotos(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (Data?, Error?) -> Void, ifNoPhotosDo: ((() -> Void))?) {
         let url = Endpoints.searchPhotos(perPage: "30", latitude: latitude, longitude: longitude).url
         print(url)
         taskForGetRequest(url: url, responseType: FlickrPhotoResponseWrap.self) { (response, error) in
             if let response = response {
                 var photosData: [Data] = []
                 let photosList = response.photos.photo
+                if photosList.count == 0 {
+                    if let ifNoPhotosDo = ifNoPhotosDo {
+                        ifNoPhotosDo()
+                        return
+                    }
+                }
                 for photo in photosList {
                     getImageData(url: photo.url) { (data, error) in
                         if let data = data {

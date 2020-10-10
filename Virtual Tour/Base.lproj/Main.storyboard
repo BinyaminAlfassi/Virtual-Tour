@@ -73,7 +73,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="97V-p0-oLW">
                                 <rect key="frame" x="0.0" y="288" width="414" height="530"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CIb-3t-iJP" customClass="CustomCollectionLayout" customModule="Virtual_Tour" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CIb-3t-iJP">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -119,14 +119,23 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EMP-sg-7aq"/>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hIo-we-D7o">
+                                <rect key="frame" x="162" y="403" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Axu-7Q-QGN"/>
+                                    <constraint firstAttribute="height" constant="90" id="XYg-Aj-kLW"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p7N-aS-ZHv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hIo-we-D7o" firstAttribute="centerY" secondItem="7Ly-ag-iOY" secondAttribute="centerY" id="2wZ-b9-8fM"/>
                             <constraint firstItem="8y3-ns-BaH" firstAttribute="top" secondItem="p7N-aS-ZHv" secondAttribute="top" id="32C-l0-eQL"/>
                             <constraint firstItem="p7N-aS-ZHv" firstAttribute="bottom" secondItem="y8Z-YD-kPn" secondAttribute="bottom" id="4Ki-Oc-oPW"/>
                             <constraint firstItem="8y3-ns-BaH" firstAttribute="leading" secondItem="p7N-aS-ZHv" secondAttribute="leading" id="J3G-cm-s8d"/>
                             <constraint firstItem="y8Z-YD-kPn" firstAttribute="leading" secondItem="p7N-aS-ZHv" secondAttribute="leading" id="OYh-Ib-KDc"/>
+                            <constraint firstItem="hIo-we-D7o" firstAttribute="centerX" secondItem="7Ly-ag-iOY" secondAttribute="centerX" id="Pmp-Yn-a9K"/>
                             <constraint firstItem="97V-p0-oLW" firstAttribute="leading" secondItem="p7N-aS-ZHv" secondAttribute="leading" id="Umc-EM-h4c"/>
                             <constraint firstItem="97V-p0-oLW" firstAttribute="top" secondItem="8y3-ns-BaH" secondAttribute="bottom" id="i1j-ar-G6Y"/>
                             <constraint firstItem="p7N-aS-ZHv" firstAttribute="trailing" secondItem="8y3-ns-BaH" secondAttribute="trailing" id="u9J-op-ZAD"/>
@@ -137,6 +146,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DoP-J7-ZbE"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="hIo-we-D7o" id="zCG-bh-l4b"/>
                         <outlet property="buttomToolbar" destination="y8Z-YD-kPn" id="Tap-iv-L6B"/>
                         <outlet property="collectionView" destination="97V-p0-oLW" id="1cV-WG-sFd"/>
                         <outlet property="mapView" destination="8y3-ns-BaH" id="RbQ-go-d3c"/>
